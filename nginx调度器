@@ -1,0 +1,20 @@
+调度器
+	7层调度--》http
+	4层调度--》tcp/udp
+
+
+[http] | stream {
+	upstream servers {
+		server ip_1:port;
+		server ip_2:port;
+	}
+	
+	server {
+		listen port;
+		[server_name  www.a.com;]
+		proxy_pass [http://]servers;
+	}
+}
+
+
+
